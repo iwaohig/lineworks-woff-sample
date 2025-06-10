@@ -18,9 +18,21 @@ let appState = {
 
 // DOMContentLoadedイベントリスナー
 document.addEventListener("DOMContentLoaded", function() {
-    initializeWoffApp();
-    setupEventListeners();
-    updateDebugInfo();
+    // WOFF SDK の読み込み確認と初期化
+    function checkAndInitialize() {
+        if (typeof woff === 'undefined') {
+            logDebug("WOFF SDK がまだ読み込まれていません。500ms後に再試行します。");
+            setTimeout(checkAndInitialize, 500);
+            return;
+        }
+        
+        logDebug("WOFF SDK が確認されました。初期化を開始します。");
+        initializeWoffApp();
+        setupEventListeners();
+        updateDebugInfo();
+    }
+    
+    checkAndInitialize();
 });
 
 // WOFF アプリの初期化

@@ -6,6 +6,24 @@
     <title>LINE WORKS WOFF Sample</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://static.worksmobile.net/static/woff/sdk/v1/woff-sdk.js"></script>
+    <script>
+        // WOFF SDK の読み込み確認
+        window.addEventListener('load', function() {
+            if (typeof woff === 'undefined') {
+                console.error('WOFF SDK が読み込まれていません');
+                // フォールバック処理
+                window.woff = {
+                    init: function() { return Promise.resolve(); },
+                    isInClient: function() { return false; },
+                    isLoggedIn: function() { return false; },
+                    getProfile: function() { return Promise.resolve({displayName: 'テストユーザー', userId: 'test001'}); },
+                    getAccessToken: function() { return null; },
+                    login: function() { return Promise.resolve(); },
+                    closeWindow: function() { console.log('closeWindow called'); }
+                };
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -90,6 +108,22 @@
         </footer>
     </div>
 
-    <script src="app.js"></script>
+    <script>
+        // WOFF SDK の読み込み待機
+        window.addEventListener('load', function() {
+            // 少し遅延を入れてSDKの読み込みを確実にする
+            setTimeout(function() {
+                const script = document.createElement('script');
+                script.src = 'app.js';
+                script.onload = function() {
+                    console.log('app.js loaded successfully');
+                };
+                script.onerror = function() {
+                    console.error('app.js の読み込みに失敗しました');
+                };
+                document.head.appendChild(script);
+            }, 100);
+        });
+    </script>
 </body>
 </html>

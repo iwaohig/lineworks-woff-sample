@@ -20,6 +20,40 @@ lineworks-woff-sample/
 └── README.md           # このファイル
 ```
 
+## GitHub Pages デモ
+
+このサンプルアプリは GitHub Pages で公開されています：
+
+**デモURL**: https://iwaoh.github.io/lineworks-woff-sample/
+
+### GitHub Pagesでの公開方法
+
+1. **リポジトリのフォーク**
+   ```bash
+   # このリポジトリをフォークまたはクローン
+   git clone https://github.com/iwaoh/lineworks-woff-sample.git
+   cd lineworks-woff-sample
+   ```
+
+2. **GitHub リポジトリの作成**
+   - GitHubで新しいリポジトリを作成
+   - ローカルのコードをプッシュ
+
+3. **GitHub Pages の有効化**
+   - リポジトリの Settings > Pages
+   - Source を "GitHub Actions" に設定
+   - 自動デプロイが開始されます
+
+4. **カスタムドメインの設定 (オプション)**
+   - `CNAME` ファイルを編集
+   - Settings > Pages でカスタムドメインを設定
+
+### 自動デプロイ
+
+- `main` ブランチへのプッシュで自動デプロイ
+- GitHub Actions ワークフローが自動実行
+- デプロイ完了後に GitHub Pages URL でアクセス可能
+
 ## セットアップ
 
 ### 1. WOFF IDの設定
