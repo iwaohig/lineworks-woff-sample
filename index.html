@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE WORKS WOFF Sample</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://static.worksmobile.net/static/woff/sdk/v1/woff-sdk.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LINE WORKS WOFF Sample</h1>
+            <p>LINE WORKS Web Office Function Framework サンプルアプリ</p>
+        </header>
+
+        <main>
+            <section class="user-info">
+                <h2>ユーザー情報</h2>
+                <div class="info-row">
+                    <label>表示名:</label>
+                    <input type="text" id="displayNameInput" readonly>
+                </div>
+                <div class="info-row">
+                    <label>ユーザーID:</label>
+                    <input type="text" id="userIdInput" readonly>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>来訪者登録フォーム</h2>
+                <form id="visitorForm">
+                    <div class="form-group">
+                        <label for="visitorName">来訪者名:</label>
+                        <input type="text" id="visitorName" name="visitorName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">会社名:</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visitDateTime">訪問日時:</label>
+                        <input type="datetime-local" id="visitDateTime" name="visitDateTime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visitDetails">訪問目的:</label>
+                        <textarea id="visitDetails" name="visitDetails" maxlength="255" rows="4"></textarea>
+                        <small id="characterCount">0/255</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactPerson">担当者:</label>
+                        <input type="text" id="contactPerson" name="contactPerson">
+                    </div>
+
+                    <button type="button" onclick="submitForm()">登録</button>
+                </form>
+            </section>
+
+            <section class="actions">
+                <h2>アクション</h2>
+                <div class="button-group">
+                    <button onclick="refreshProfile()">プロフィール更新</button>
+                    <button onclick="closeApp()">アプリを閉じる</button>
+                </div>
+            </section>
+
+            <section class="debug-info">
+                <h2>デバッグ情報</h2>
+                <div class="debug-row">
+                    <label>WOFF ID:</label>
+                    <span id="woffIdDisplay"></span>
+                </div>
+                <div class="debug-row">
+                    <label>ログイン状態:</label>
+                    <span id="loginStatus"></span>
+                </div>
+                <div class="debug-row">
+                    <label>クライアント内:</label>
+                    <span id="clientStatus"></span>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 LINE WORKS WOFF Sample</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

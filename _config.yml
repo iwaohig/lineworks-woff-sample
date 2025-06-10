@@ -1,0 +1,40 @@
+# GitHub Pages Jekyll Configuration
+title: LINE WORKS WOFF Sample
+description: LINE WORKS Web Office Function Framework Sample Application
+baseurl: "/lineworks-woff-sample"
+url: "https://iwaoh.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - .git/
+  - .gitignore
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+
+# Include files
+include:
+  - .htaccess
+
+# Collections
+collections_dir: collections
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Site settings
+timezone: Asia/Tokyo
+lang: ja
