@@ -2,7 +2,7 @@
 
 // 設定定数
 const CONFIG = {
-    WOFF_ID: "YOUR_WOFF_ID_HERE", // 実際のWOFF IDに置き換えてください
+    WOFF_ID: "qu0wS6G52ulDhXL1xPFB5Q", // 実際のWOFF IDに設定済み
     API_ENDPOINT: "YOUR_API_ENDPOINT_HERE", // 実際のAPIエンドポイントに置き換えてください
     DEBUG_MODE: true
 };
